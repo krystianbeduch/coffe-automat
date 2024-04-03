@@ -27,12 +27,22 @@ void Order::addProduct(AnsiString product, double price){
 }
 
 void Order::showPriceOnAmmountToPayLabel(AnsiString product){
+     int sugar = StrToInt(Form2->SugarSachetsEdit->Text);
+
      double price = getPrice(product);
+     if (sugar == 0) {
+        price += order->setPriceWithSugar(0);
+     }
+     else if (sugar > 1) {
+        price += order->setPriceWithSugar(sugar);
+     }
+
+
+
      AnsiString formattedPrice = FormatFloat("0.00", price);
      Form1->AmmountToPayLabel->Caption = formattedPrice;
      if (!Form1->Panel2->Visible)
         Form1->Panel2->Visible = true;
-     priceOfOrder = price;
 }
 
 
@@ -42,4 +52,26 @@ void Order::showSugarPriceOnSugarEditorPriceLabel(Order order){
 
 double Order::getPriceOfOrder(){
        return priceOfOrder;
+}
+
+void Order::setPriceOfOrder(double price){
+     priceOfOrder = price;
+}
+
+void Order::setOrderProduct(AnsiString product){
+     productOfOrder = product;
+}
+
+AnsiString Order::getOrderProduct(){
+    return productOfOrder;
+}
+
+double Order::setPriceWithSugar(int howManySugar){
+       if (howManySugar == 0) {
+          return -0.2;
+       }
+       else if (howManySugar > 1) {
+            return 0.2 * (howManySugar - 1);
+       }
+       return 0;
 }

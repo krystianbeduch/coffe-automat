@@ -17,29 +17,38 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
+//double newPrice;
+
+//double originalPriceOfOrder = order->getPriceOfOrder();
+
+double originalPriceOfOrder;
+
 void __fastcall TForm2::SugarSachetsEditChange(TObject *Sender)
 {
      int sugar = 1;
+     double newPrice = 0;
      sugar = StrToInt(SugarSachetsEdit->Text);
-     if (sugar != 1) {
-          if (sugar == 0) {
-//             SugarEditorPriceLabel->Caption = "Zamowienie tansze o 0.20 PLN";
-             SugarEditorPriceLabel->Caption = FloatToStr(order->getPriceOfOrder());
-             //order->showSugarPriceOnSugarEditorPriceLabel(Form1->order);
-          }
-          else {
-             double addPrice = (sugar - 1) * 0.2;
-             SugarEditorPriceLabel->Caption = "Zamowienie dodatkowo platne: " + FloatToStr(addPrice) + "0 PLN";
+     if (sugar == 0) {
+         newPrice = originalPriceOfOrder + order->setPriceWithSugar(0);
 
-          }
      }
      else {
-          SugarEditorPriceLabel->Caption = "";
+         newPrice = originalPriceOfOrder + order->setPriceWithSugar(sugar);
      }
+     AnsiString formattedPrice = FormatFloat("0.00", newPrice);
+     SugarEditorPriceLabel->Caption = formattedPrice;
+}
+//---------------------------------------------------------------------------
 
 
 
 
+void __fastcall TForm2::FormShow(TObject *Sender)
+{
+     originalPriceOfOrder = order->getPrice(order->getOrderProduct());
+     AnsiString formattedPrice = FormatFloat("0.00", originalPriceOfOrder);
+     SugarEditorPriceLabel->Caption = formattedPrice;
+     SugarSachetsEdit->Text = SugarSachetsItemIndex[1];
 }
 //---------------------------------------------------------------------------
 

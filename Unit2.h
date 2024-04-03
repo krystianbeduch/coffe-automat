@@ -21,7 +21,9 @@ __published:	// IDE-managed Components
         TBitBtn *SugarEditorCancel;
         TBitBtn *SugarEditorOK;
         TLabel *SugarEditorPriceLabel;
+    TLabel *Label4;
     void __fastcall SugarSachetsEditChange(TObject *Sender);
+    void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm2(TComponent* Owner);

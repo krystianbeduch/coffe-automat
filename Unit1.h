@@ -38,7 +38,6 @@ __published:	// IDE-managed Components
         void __fastcall SpeedButton1Click(TObject *Sender);
         void __fastcall ImageAutomatMouseDown(TObject *Sender,
           TMouseButton Button, TShiftState Shift, int X, int Y);
-        void __fastcall EditSugarButton2Click(TObject *Sender);
     void __fastcall EditSugarButtonClick(TObject *Sender);
     void __fastcall LargeBlackCoffeeButtonClick(TObject *Sender);
     void __fastcall SmallBlackCoffeeButtonClick(TObject *Sender);

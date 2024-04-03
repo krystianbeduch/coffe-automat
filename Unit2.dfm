@@ -1,8 +1,8 @@
 object Form2: TForm2
-  Left = 1472
-  Top = 531
+  Left = 893
+  Top = 505
   Width = 521
-  Height = 248
+  Height = 269
   AutoSize = True
   Caption = 'Form2'
   Color = clBtnFace
@@ -12,13 +12,14 @@ object Form2: TForm2
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
     Top = 0
     Width = 505
-    Height = 209
+    Height = 230
     TabOrder = 0
     object Label1: TLabel
       Left = 0
@@ -66,11 +67,26 @@ object Form2: TForm2
     end
     object SugarEditorPriceLabel: TLabel
       Left = 0
+      Top = 152
+      Width = 505
+      Height = 20
+      Alignment = taCenter
+      AutoSize = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label4: TLabel
+      Left = 0
       Top = 120
       Width = 505
       Height = 20
       Alignment = taCenter
       AutoSize = False
+      Caption = 'Aktualna cena zamowienia'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
       Font.Height = -16
@@ -104,7 +120,7 @@ object Form2: TForm2
     end
     object SugarEditorCancel: TBitBtn
       Left = 272
-      Top = 160
+      Top = 185
       Width = 89
       Height = 25
       Caption = 'Anuluj'
@@ -119,7 +135,7 @@ object Form2: TForm2
     end
     object SugarEditorOK: TBitBtn
       Left = 160
-      Top = 160
+      Top = 185
       Width = 89
       Height = 25
       Caption = 'Zatwierdz'

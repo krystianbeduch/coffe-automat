@@ -10,12 +10,23 @@ class Order {
              Order();
              double getPrice(AnsiString product);
              void addProduct(AnsiString product, double price);
+
              void showPriceOnAmmountToPayLabel(AnsiString product);
-             void showSugarPriceOnSugarEditorPriceLabel(Order order);
+             void showSugarPriceOnSugarEditorPriceLabel(Order order);  //
+
              double getPriceOfOrder();
+             void setPriceOfOrder(double price);
+
+             void setOrderProduct(AnsiString product);
+             AnsiString getOrderProduct();
+
+             double setPriceWithSugar(int howManySugar);
+
       private:
-              std::map<AnsiString, double> listOfProducts;
-              double priceOfOrder;
+             std::map<AnsiString, double> listOfProducts;
+             double priceOfOrder;
+             AnsiString productOfOrder;
+             //int sugar;
 };
 extern Order * order;
 
