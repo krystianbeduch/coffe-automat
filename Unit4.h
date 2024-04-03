@@ -28,6 +28,8 @@ class Order {
              int convertToInt(int price);
              double convertToDouble(int price);
 
+             void prepareOrder();
+
       private:
              std::map<AnsiString, double> listOfProducts;
              double priceOfOrder;

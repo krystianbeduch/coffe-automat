@@ -18,7 +18,7 @@ class TForm1 : public TForm
 __published:	// IDE-managed Components
         TImage *ImageAutomat;
         TSpeedButton *SpeedButton1;
-        TPanel *Panel1;
+    TPanel *StatusOrder;
         TGroupBox *MenuGroupBox;
         TRadioButton *LargeBlackCoffeeButton;
         TRadioButton *SmallBlackCoffeeButton;
@@ -34,6 +34,12 @@ __published:	// IDE-managed Components
     TLabel *AmmountToPayLabel;
     TPanel *Panel2;
     TSpeedButton *PaymentButton;
+    TPanel *PrepareOrderTimePanel;
+    TPanel *Panel15;
+    TPanel *Panel14;
+    TPanel *Panel13;
+    TPanel *Panel12;
+    TPanel *Panel11;
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall SpeedButton1Click(TObject *Sender);
         void __fastcall ImageAutomatMouseDown(TObject *Sender,

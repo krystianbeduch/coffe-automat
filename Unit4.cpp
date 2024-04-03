@@ -89,7 +89,7 @@ AnsiString Order::getOrderProduct(){
 
 double Order::setPriceWithSugar(int howManySugar){
     if (howManySugar == 0) {
-        return -0.2;                /////////////////////////////////////////////////////////
+        return -0.2;
     }
     else if (howManySugar > 1) {
          return 0.2 * (howManySugar - 1);
@@ -125,7 +125,10 @@ void Order::paymentDone(){
 }
 
 AnsiString Order::spentChange(double change){
+
+     change *= 10;///
      AnsiString nominals = "";
+     /*
      do{
 		if (change >= 0.1 && change < 0.2) {
             nominals += "10gr ";
@@ -149,5 +152,54 @@ AnsiString Order::spentChange(double change){
 		}
      }
      while(!(change < 0.1));
+     */
+
+     do{
+		if (change >= 1 && change < 2) {
+            nominals += "10gr ";
+            change -= 1;
+		}
+		else if(change >= 2 && change < 5){
+            nominals += "20gr ";
+            change -= 2;
+		}
+		else if(change >= 5 && change < 10){
+            nominals += "50gr ";
+            change -= 5;
+		}
+		else if(change >= 10 && change < 20){
+            nominals += "1zl ";
+            change -= 10;
+		}
+		else if(change >= 20 && change < 50){
+            nominals += "2zl ";
+            change -= 20;
+		}
+        else {
+             nominals += "5zl ";
+             change -= 50;
+        }
+     }
+     while(!(change < 1));
      return nominals;
+}
+
+void Order::prepareOrder(){
+     Form1->EditSugarButton->Enabled = false;
+     Form1->PaymentButton->Enabled = false;
+     Form1->MenuGroupBox->Enabled = false;
+
+     Sleep(1000);
+     Form1->PrepareOrderTimePanel->Visible = true;
+     Form1->Panel11->Visible = true;
+     Sleep(1000);
+     Form1->Panel12->Visible = true;
+     Sleep(1000);
+     Form1->Panel13->Visible = true;
+     Sleep(1000);
+     Form1->Panel14->Visible = true;
+     Sleep(1000);
+     Form1->Panel15->Visible = true;
+     Sleep(1000);
+     Form1->PrepareOrderTimePanel->Visible = false;
 }

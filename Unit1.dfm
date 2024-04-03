@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 1124
-  Top = 339
+  Left = 1496
+  Top = 344
   Width = 416
   Height = 709
   AutoSize = True
@@ -1220,12 +1220,12 @@ object Form1: TForm1
     ParentFont = False
     OnClick = SpeedButton1Click
   end
-  object Panel1: TPanel
-    Left = 56
-    Top = 408
-    Width = 41
-    Height = 41
-    Color = clLime
+  object StatusOrder: TPanel
+    Left = 248
+    Top = 208
+    Width = 33
+    Height = 33
+    Color = clRed
     TabOrder = 0
   end
   object MenuGroupBox: TGroupBox
@@ -1369,6 +1369,59 @@ object Form1: TForm1
       Font.Style = [fsBold]
       ParentFont = False
       OnClick = PaymentButtonClick
+    end
+  end
+  object PrepareOrderTimePanel: TPanel
+    Left = 144
+    Top = 164
+    Width = 89
+    Height = 150
+    TabOrder = 5
+    Visible = False
+    object Panel15: TPanel
+      Left = 0
+      Top = 0
+      Width = 89
+      Height = 30
+      Color = clBlue
+      TabOrder = 0
+      Visible = False
+    end
+    object Panel14: TPanel
+      Left = 0
+      Top = 30
+      Width = 89
+      Height = 30
+      Color = clBlue
+      TabOrder = 1
+      Visible = False
+    end
+    object Panel13: TPanel
+      Left = 0
+      Top = 60
+      Width = 89
+      Height = 30
+      Color = clBlue
+      TabOrder = 2
+      Visible = False
+    end
+    object Panel12: TPanel
+      Left = 0
+      Top = 90
+      Width = 89
+      Height = 30
+      Color = clBlue
+      TabOrder = 3
+      Visible = False
+    end
+    object Panel11: TPanel
+      Left = 0
+      Top = 120
+      Width = 89
+      Height = 30
+      Color = clBlue
+      TabOrder = 4
+      Visible = False
     end
   end
 end

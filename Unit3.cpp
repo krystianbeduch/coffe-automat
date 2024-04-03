@@ -31,10 +31,13 @@ double TForm3::convertToDouble(int price){
 */
 void __fastcall TForm3::Pay10grButtonClick(TObject *Sender)
 {
-     priceToPay -= 0.1;
+     //priceToPay -= 0.1;
+
+     priceToPay -= 1;
      //priceToPayDouble = order->convertToDouble(priceToPay);
 
-     ToPayLabel->Caption = FloatToStr(priceToPay);
+//     ToPayLabel->Caption = FloatToStr(priceToPay);
+     ToPayLabel->Caption = FloatToStr(priceToPay / 10);
 
      /*
      priceToPayInt -= 1;
@@ -50,9 +53,13 @@ void __fastcall TForm3::Pay10grButtonClick(TObject *Sender)
 void __fastcall TForm3::Pay20grButtonClick(TObject *Sender)
 {
 
-     priceToPay -= 0.2;
+     //priceToPay -= 0.2;
+     priceToPay -= 2;
+
      //priceToPayDouble = order->convertToDouble(priceToPay);
-     ToPayLabel->Caption = FloatToStr(priceToPay);
+
+//     ToPayLabel->Caption = FloatToStr(priceToPay);
+     ToPayLabel->Caption = FloatToStr(priceToPay / 10);
 
      /*
      priceToPayInt -= 2;
@@ -65,9 +72,13 @@ void __fastcall TForm3::Pay20grButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm3::Pay50grButtonClick(TObject *Sender)
 {
-     priceToPay -= 0.5;
+//     priceToPay -= 0.5;
+     priceToPay -= 5;
+
     //priceToPayDouble = order->convertToDouble(priceToPay);
-     ToPayLabel->Caption = FloatToStr(priceToPay);
+
+     //     ToPayLabel->Caption = FloatToStr(priceToPay);
+     ToPayLabel->Caption = FloatToStr(priceToPay / 10);
 
     /* priceToPayInt -= 5;
      priceToPay = convertToDouble(priceToPayInt);
@@ -79,9 +90,11 @@ void __fastcall TForm3::Pay50grButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm3::Pay1zlButtonClick(TObject *Sender)
 {
-     priceToPay -= 1;
+//     priceToPay -= 1;
+     priceToPay -= 10;
      //priceToPayDouble = order->convertToDouble(priceToPay);
-     ToPayLabel->Caption = FloatToStr(priceToPay);
+//     ToPayLabel->Caption = FloatToStr(priceToPay);
+     ToPayLabel->Caption = FloatToStr(priceToPay / 10);
 
                     /*
      priceToPayInt -= 10;
@@ -94,9 +107,11 @@ void __fastcall TForm3::Pay1zlButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm3::Pay2zlButtonClick(TObject *Sender)
 {
-     priceToPay -= 2;
+//     priceToPay -= 2;
+     priceToPay -= 20;
      //priceToPayDouble = order->convertToDouble(priceToPay);
-     ToPayLabel->Caption = FloatToStr(priceToPay);
+//     ToPayLabel->Caption = FloatToStr(priceToPay);
+     ToPayLabel->Caption = FloatToStr(priceToPay / 10);
 
       /*
      priceToPayInt -= 20;
@@ -109,16 +124,11 @@ void __fastcall TForm3::Pay2zlButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void __fastcall TForm3::Pay5zlButtonClick(TObject *Sender)
 {
-     priceToPay -= 5;
+//     priceToPay -= 5;
+     priceToPay -= 50;
      //priceToPayDouble = order->convertToDouble(priceToPay);
-     ToPayLabel->Caption = FloatToStr(priceToPay);
-
-
-
-/*     priceToPayInt -= 50;
-     priceToPay = convertToDouble(priceToPayInt);
-     ToPayLabel->Caption = FloatToStr(priceToPay);
-     */
+//     ToPayLabel->Caption = FloatToStr(priceToPay);
+     ToPayLabel->Caption = FloatToStr(priceToPay / 10);
      if (order->isPayed(priceToPay))
         order->paymentDone();
 }
@@ -130,6 +140,9 @@ void __fastcall TForm3::FormShow(TObject *Sender)
      priceToPay = order->getPriceOfOrder();
 
 
+     priceToPay *= 10; ////////
+
+
      //////////
      //priceToPayDouble = order->convertToDouble(priceToPay);
      //ToPayLabel->Caption = FloatToStr(priceToPayDouble);
@@ -137,7 +150,7 @@ void __fastcall TForm3::FormShow(TObject *Sender)
      //priceToPayInt = convertToInt(priceToPay);
 
 
-     ToPayLabel->Caption = FloatToStr(priceToPay);
+     ToPayLabel->Caption = FloatToStr(priceToPay / 10);
 }
 //---------------------------------------------------------------------------
 

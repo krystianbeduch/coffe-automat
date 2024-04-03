@@ -140,8 +140,10 @@ void __fastcall TForm1::PaymentButtonClick(TObject *Sender)
 {
      Form3->ShowModal();
      if (Form3->ModalResult == mrOk) {
-
-    }
+        StatusOrder->Color = clYellow;
+        order->prepareOrder();
+        StatusOrder->Color = clLime;
+     }
 }
 //---------------------------------------------------------------------------
 
@@ -150,5 +152,6 @@ void __fastcall TForm1::FormDestroy(TObject *Sender)
     delete order;
 }
 //---------------------------------------------------------------------------
+
 
 
