@@ -1321,6 +1321,7 @@ object Form1: TForm1
       Width = 81
       Height = 25
       Caption = '1'
+      Enabled = False
       Flat = True
       OnClick = EditSugarButtonClick
     end

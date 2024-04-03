@@ -1,6 +1,6 @@
 object Form3: TForm3
-  Left = 1391
-  Top = 685
+  Left = 1404
+  Top = 673
   Width = 521
   Height = 289
   AutoSize = True
@@ -12,7 +12,7 @@ object Form3: TForm3
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
-  OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -155,7 +155,7 @@ object Form3: TForm3
       ParentFont = False
       OnClick = Pay50grButtonClick
     end
-    object Pay5zlrButton: TSpeedButton
+    object Pay5zlButton: TSpeedButton
       Left = 381
       Top = 72
       Width = 65
@@ -168,7 +168,7 @@ object Form3: TForm3
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       ParentFont = False
-      OnClick = Pay5zlrButtonClick
+      OnClick = Pay5zlButtonClick
     end
     object Label4: TLabel
       Left = 0

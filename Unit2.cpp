@@ -30,25 +30,26 @@ void __fastcall TForm2::SugarSachetsEditChange(TObject *Sender)
      sugar = StrToInt(SugarSachetsEdit->Text);
      if (sugar == 0) {
          newPrice = originalPriceOfOrder + order->setPriceWithSugar(0);
-
      }
      else {
          newPrice = originalPriceOfOrder + order->setPriceWithSugar(sugar);
      }
-     AnsiString formattedPrice = FormatFloat("0.00", newPrice);
-     SugarEditorPriceLabel->Caption = formattedPrice;
+
+     //double priceInDouble = order->convertToDouble(newPrice);
+     AnsiString formattedPrice = FormatFloat("0.00", newPrice); ////////
+     SugarEditorPriceLabel->Caption = formattedPrice;   ///////////////////////////
+//     SugarEditorPriceLabel->Caption = newPrice;   //////////////////////////
 }
 //---------------------------------------------------------------------------
-
-
-
 
 void __fastcall TForm2::FormShow(TObject *Sender)
 {
      originalPriceOfOrder = order->getPrice(order->getOrderProduct());
-     AnsiString formattedPrice = FormatFloat("0.00", originalPriceOfOrder);
+
+     //double priceInDouble = order->convertToDouble(originalPriceOfOrder); ////////////////
+     AnsiString formattedPrice = FormatFloat("0.00", originalPriceOfOrder); ////
      SugarEditorPriceLabel->Caption = formattedPrice;
-     SugarSachetsEdit->Text = SugarSachetsItemIndex[1];
+     SugarSachetsEdit->ItemIndex = 1;
 }
 //---------------------------------------------------------------------------
 
