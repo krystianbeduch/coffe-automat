@@ -5,7 +5,8 @@
 
 #include "Unit2.h"
 #include "Unit1.h"
-#include "Unit4.h"
+//#include "Unit4.h"
+#include "Order.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -44,7 +45,7 @@ void __fastcall TForm2::SugarSachetsEditChange(TObject *Sender)
 
 void __fastcall TForm2::FormShow(TObject *Sender)
 {
-     originalPriceOfOrder = order->getPrice(order->getOrderProduct());
+     originalPriceOfOrder = order->base->getPrice(order->getOrderProduct());
 
      //double priceInDouble = order->convertToDouble(originalPriceOfOrder); ////////////////
      AnsiString formattedPrice = FormatFloat("0.00", originalPriceOfOrder); ////

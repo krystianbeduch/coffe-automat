@@ -1,16 +1,16 @@
 //---------------------------------------------------------------------------
 
-#ifndef Unit4H
-#define Unit4H
+#ifndef OrderH
+#define OrderH
+//---------------------------------------------------------------------------
 #include <map>
 #include <system.hpp>
 #include "baseProducts.h"
+#include "Sugar.h"
 
-//---------------------------------------------------------------------------
-/*
 class Order {
       public:
-             Order(BaseProducts * base);
+             Order(BaseProducts * base, Sugar * sugar);
              //double getPrice(AnsiString product);
              //void addProduct(AnsiString product, double price);
 
@@ -34,8 +34,11 @@ class Order {
              void orderReadyToStart();
              void prepareOrder();
              void collectOrder();
+             void clearMenuRadioButtons();
 
              BaseProducts * base;
+             Sugar * sugar;
+
 
       private:
              std::map<AnsiString, double> listOfProducts;
@@ -45,7 +48,5 @@ class Order {
 
 };
 extern Order * order;
-
-              */
 
 #endif

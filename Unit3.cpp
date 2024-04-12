@@ -4,7 +4,8 @@
 #pragma hdrstop
 
 #include "Unit3.h"
-#include "Unit4.h"
+//#include "Unit4.h"
+#include "Order.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -151,6 +152,26 @@ void __fastcall TForm3::FormShow(TObject *Sender)
 
 
      ToPayLabel->Caption = FloatToStr(priceToPay / 10);
+
+
+     Form3->Pay10grButton->Enabled = true;
+     Form3->Pay20grButton->Enabled = true;
+     Form3->Pay50grButton->Enabled = true;
+     Form3->Pay1zlButton->Enabled = true;
+     Form3->Pay2zlButton->Enabled = true;
+     Form3->Pay5zlButton->Enabled = true;
+
+     Form3->Label4->Visible = false;
+     Form3->RestLabel->Visible = false;
+
+//     double change = StrToFloat(Form3->ToPayLabel->Caption);
+  //   Form3->RestLabel->Caption = spentChange(-change);
+    // Form3->ToPayLabel->Caption = "0";
+
+     Form3->PaymentExitButton->ModalResult = mrCancel;
+     Form3->PaymentExitButton->Kind = bkCancel;
+     Form3->PaymentExitButton->Caption = "Przerwij platnosc";
+
 }
 //---------------------------------------------------------------------------
 
