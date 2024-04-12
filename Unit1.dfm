@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 1496
-  Top = 344
+  Left = 1502
+  Top = 347
   Width = 416
   Height = 709
   AutoSize = True
@@ -1227,6 +1227,14 @@ object Form1: TForm1
     Height = 33
     Color = clRed
     TabOrder = 0
+    object TakeCupButton: TSpeedButton
+      Left = 0
+      Top = 0
+      Width = 33
+      Height = 33
+      Flat = True
+      Visible = False
+    end
   end
   object MenuGroupBox: TGroupBox
     Left = 104
@@ -1348,7 +1356,7 @@ object Form1: TForm1
       ParentFont = False
     end
   end
-  object Panel2: TPanel
+  object PaymentPanel: TPanel
     Left = 48
     Top = 248
     Width = 81
@@ -1422,6 +1430,45 @@ object Form1: TForm1
       Color = clBlue
       TabOrder = 4
       Visible = False
+    end
+  end
+  object StartPanel: TPanel
+    Left = 248
+    Top = 168
+    Width = 81
+    Height = 33
+    TabOrder = 6
+    Visible = False
+    object StartButton: TSpeedButton
+      Left = 0
+      Top = 0
+      Width = 81
+      Height = 33
+      Caption = 'START'
+      Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = StartButtonClick
+    end
+    object CollectButton: TSpeedButton
+      Left = 0
+      Top = 0
+      Width = 81
+      Height = 33
+      Caption = 'ODBIERZ'
+      Flat = True
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      Visible = False
+      OnClick = CollectButtonClick
     end
   end
 end

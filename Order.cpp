@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------
-#include "Unit4.h"
+#include "Order.h"
 #include "Unit1.h"
 #include "Unit2.h"
 #include "Unit3.h"
@@ -8,7 +8,6 @@
 
 //---------------------------------------------------------------------------
 //BaseProducts * base;
-/*
 Order::Order(BaseProducts * base){
     Order::base = base;
 
@@ -32,10 +31,9 @@ Order::Order(BaseProducts * base){
     addProduct("BlackTea", 30);
     addProduct("RaspberryTea", 35);
     */
-    /*
 }
 
-      */
+
 
 /*int Order::convertToInt(int price){
     return static_cast<int>(price * 10);
@@ -60,8 +58,6 @@ void Order::addProduct(AnsiString product, double price){
     listOfProducts[product] = price;
 }
   */
-
-  /*
 void Order::showPriceOnAmmountToPayLabel(AnsiString product){
     int sugar = StrToInt(Form2->SugarSachetsEdit->Text);
     Form1->EditSugarButton->Enabled = true;
@@ -77,7 +73,7 @@ void Order::showPriceOnAmmountToPayLabel(AnsiString product){
     //priceInDouble = convertToDouble(price); /////////////
     AnsiString formattedPrice = FormatFloat("0.00", price);
     Form1->AmmountToPayLabel->Caption = formattedPrice;
-    //if (!Form1->PaymentPanel->Visible)
+    if (!Form1->PaymentPanel->Visible)
        Form1->PaymentPanel->Visible = true;
 }
 
@@ -163,7 +159,7 @@ AnsiString Order::spentChange(double change){
      }
      while(!(change < 0.1));
      */
-       /*
+
      do{
 		if (change >= 1 && change < 2) {
             nominals += "10gr ";
@@ -186,34 +182,23 @@ AnsiString Order::spentChange(double change){
             change -= 20;
 		}
         else {
-             nominals += "Zaplacono rowno";
-             //change -= 50;
+            nominals += "51zl ";
+             change -= 50;
         }
      }
      while(!(change < 1));
      return nominals;
 }
 
-void Order::orderReadyToStart(){
+void Order::prepareOrder(){
+     //Form1->StatusOrder->Color = clYellow;
+
      Form1->EditSugarButton->Enabled = false;
      Form1->PaymentButton->Enabled = false;
      Form1->MenuGroupBox->Enabled = false;
 
-     Form1->StatusOrder->Color = clYellow;
-     setPriceOfOrder(0);
-     AnsiString formattedPrice = FormatFloat("0.00", getPriceOfOrder());
-     Form1->AmmountToPayLabel->Caption = formattedPrice;
-     Form1->StartPanel->Visible = true;
-     Form1->StartButton->Visible = true;
-
-
-}
-
-void Order::prepareOrder(){
-     Form1->StartButton->Enabled = false;
-     Form1->StartButton->Visible = false;
-
-     Sleep(1000);
+//     Sleep(1000);
+       Sleep(5000);
      Form1->PrepareOrderTimePanel->Visible = true;
      Form1->Panel11->Visible = true;
      Sleep(1000);
@@ -226,28 +211,7 @@ void Order::prepareOrder(){
      Form1->Panel15->Visible = true;
      Sleep(1000);
      Form1->PrepareOrderTimePanel->Visible = false;
-     Form1->Panel11->Visible = false;
-     Form1->Panel12->Visible = false;
-     Form1->Panel13->Visible = false;
-     Form1->Panel14->Visible = false;
-     Form1->Panel15->Visible = false;
-
-     Form1->StatusOrder->Color = clLime;
-     Form1->StartButton->Enabled = true;
-     Form1->CollectButton->Visible = true;
+     Form1->StatusOrder->Color = clTeal;
+//     Form1->TakeCupButton->Visible = true;
+ //    Form1->TakeCupButton->Enabled = true;
 }
-
-void Order::collectOrder(){
-     Form1->EditSugarButton->Enabled = false;
-     Form1->PaymentButton->Enabled = true;
-     Form1->MenuGroupBox->Enabled = true;
-     Form1->StatusOrder->Color = clRed;
-     Form1->CollectButton->Visible = false;
-     Form1->StartPanel->Visible = false;
-     Form1->PaymentPanel->Visible = false;
-
-     Form1->EditSugarButton->Caption = 1;
-     Form2->SugarSachetsEdit->Text = 1;
-
-
-}                 */

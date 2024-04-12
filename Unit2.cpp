@@ -44,7 +44,7 @@ void __fastcall TForm2::SugarSachetsEditChange(TObject *Sender)
 
 void __fastcall TForm2::FormShow(TObject *Sender)
 {
-     originalPriceOfOrder = order->getPrice(order->getOrderProduct());
+     originalPriceOfOrder = order->base->getPrice(order->getOrderProduct());
 
      //double priceInDouble = order->convertToDouble(originalPriceOfOrder); ////////////////
      AnsiString formattedPrice = FormatFloat("0.00", originalPriceOfOrder); ////

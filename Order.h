@@ -1,13 +1,13 @@
 //---------------------------------------------------------------------------
 
-#ifndef Unit4H
-#define Unit4H
+#ifndef OrderH
+#define OrderH
+//---------------------------------------------------------------------------
 #include <map>
 #include <system.hpp>
 #include "baseProducts.h"
 
 //---------------------------------------------------------------------------
-/*
 class Order {
       public:
              Order(BaseProducts * base);
@@ -31,10 +31,7 @@ class Order {
              int convertToInt(int price);
              double convertToDouble(int price);
 
-             void orderReadyToStart();
              void prepareOrder();
-             void collectOrder();
-
              BaseProducts * base;
 
       private:
@@ -46,6 +43,6 @@ class Order {
 };
 extern Order * order;
 
-              */
+
 
 #endif
