@@ -13,7 +13,6 @@ class BaseProducts {
              void addProduct(AnsiString product, double price);
       private:
               std::map<AnsiString, double> listOfProducts;
-
 };
 extern BaseProducts * base;
 

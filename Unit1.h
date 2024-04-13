@@ -10,8 +10,6 @@
 #include <ExtCtrls.hpp>
 #include <jpeg.hpp>
 #include <Buttons.hpp>
-
-//#include "Unit4.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {

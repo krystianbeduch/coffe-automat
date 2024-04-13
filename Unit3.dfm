@@ -1,6 +1,6 @@
 object Form3: TForm3
-  Left = 858
-  Top = 395
+  Left = 942
+  Top = 418
   Width = 521
   Height = 289
   AutoSize = True

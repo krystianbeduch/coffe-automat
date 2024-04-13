@@ -14,22 +14,19 @@ Order::Order(BaseProducts * base, Sugar * sugar){
 }
 
 void Order::showPriceOnAmmountToPayLabel(AnsiString product){
-    int sugar = StrToInt(Form2->SugarSachetsEdit->Text);
+    int sugar = order->sugar->getSugar();
     Form1->EditSugarButton->Enabled = true;
-
     double price = base->getPrice(product);
     if (sugar == 0) {
-       price += order->setPriceWithSugar(0);
+       price += order->sugar->getPriceWithSugar(0);
     }
     else if (sugar > 1) {
-        price += order->setPriceWithSugar(sugar);
+        price += order->sugar->getPriceWithSugar(sugar);
     }
 
-    //priceInDouble = convertToDouble(price); /////////////
     AnsiString formattedPrice = FormatFloat("0.00", price);
     Form1->AmmountToPayLabel->Caption = formattedPrice;
-    //if (!Form1->PaymentPanel->Visible)
-       Form1->PaymentPanel->Visible = true;
+    Form1->PaymentPanel->Visible = true;
 }
 
 double Order::getPriceOfOrder(){
@@ -48,15 +45,12 @@ AnsiString Order::getOrderProduct(){
     return productOfOrder;
 }
 
-double Order::setPriceWithSugar(int howManySugar){
-    if (howManySugar == 0) {
-        return -0.2;
-    }
-    else if (howManySugar > 1) {
-         return 0.2 * (howManySugar - 1);
-    }
-    return 0;
+void Order::throwCoin(double &priceToPay, int coin){
+    priceToPay -= coin;
+    AnsiString formattedPrice = FormatFloat("0.00", priceToPay / 10);
+    Form3->ToPayLabel->Caption = formattedPrice;
 }
+
 
 boolean Order::isPayed(double priceToPay){
     if (priceToPay <= 0)
@@ -92,32 +86,31 @@ void Order::paymentDone(){
 }
 
 AnsiString Order::spentChange(double change){
-
      change *= 10;
      AnsiString nominals = "";
-     do{
+     do {
 		if (change >= 1 && change < 2) {
             nominals += "10gr ";
             change -= 1;
 		}
-		else if(change >= 2 && change < 5){
+		else if(change >= 2 && change < 5) {
             nominals += "20gr ";
             change -= 2;
 		}
-		else if(change >= 5 && change < 10){
+		else if(change >= 5 && change < 10) {
             nominals += "50gr ";
             change -= 5;
 		}
-		else if(change >= 10 && change < 20){
+		else if(change >= 10 && change < 20) {
             nominals += "1zl ";
             change -= 10;
 		}
-		else if(change >= 20 && change < 50){
+		else if(change >= 20 && change < 50) {
             nominals += "2zl ";
             change -= 20;
 		}
         else {
-             nominals += "Zaplacono rowno";
+             nominals += "Zap³acono równo";
         }
      }
      while(!(change < 1));
@@ -142,7 +135,6 @@ void Order::prepareOrder(){
      Form1->StartButton->Enabled = false;
      Form1->StartButton->Visible = false;
 
-
      TPanel *panels[] = {
          Form1->PrepareOrderTimePanel,
          Form1->Panel11,
@@ -161,7 +153,6 @@ void Order::prepareOrder(){
         panels[i]->Visible = false;
      }
 
-
      Form1->StatusOrder->Color = clLime;
      Form1->StartButton->Enabled = true;
      Form1->CollectButton->Visible = true;
@@ -176,14 +167,11 @@ void Order::collectOrder(){
      Form1->StartPanel->Visible = false;
      Form1->PaymentPanel->Visible = false;
 
-     Form1->EditSugarButton->Caption = 1;
-     Form2->SugarSachetsEdit->Text = 1;
-
-
+     sugar->setSugar(1);
+     Form1->EditSugarButton->Caption = sugar->getSugar();
 }
 
-void Order::clearMenuRadioButtons()
-{
+void Order::clearMenuRadioButtons(){
     for (int i = 0; i < Form1->MenuGroupBox->ControlCount; i++) {
         TControl * control = Form1->MenuGroupBox->Controls[i];
         TRadioButton * radio = dynamic_cast<TRadioButton*>(control);

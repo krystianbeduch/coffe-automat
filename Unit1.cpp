@@ -6,7 +6,6 @@
 #include "Unit1.h"
 #include "Unit2.h"
 #include "Unit3.h"
-//#include "Unit4.h"
 #include "baseProducts.h"
 #include "Order.h"
 #include "Sugar.h"
@@ -14,9 +13,7 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm1 *Form1;
-//Order * order = nullptr;
 Order * order;
-//BaseProducts * base;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
@@ -31,7 +28,6 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
     SetWindowRgn( Handle, BckgRgn, true );
 
     order = new Order(new BaseProducts(), new Sugar());
-
 }
 //---------------------------------------------------------------------------
 
@@ -58,14 +54,13 @@ void __fastcall TForm1::EditSugarButtonClick(TObject *Sender)
 {
     Form2->ShowModal();
     if (Form2->ModalResult == mrOk) {
-       int sugar = StrToInt(Form2->SugarSachetsEdit->Text);
-       EditSugarButton->Caption = sugar;
+        EditSugarButton->Caption = order->sugar->getSugar();
 
-       double newPrice = StrToFloat(Form2->SugarEditorPriceLabel->Caption);
-       order->setPriceOfOrder(newPrice);
+        double newPrice = order->getPriceOfOrder();
+        order->setPriceOfOrder(newPrice);
 
-       AnsiString formattedPrice = FormatFloat("0.00", order->getPriceOfOrder());
-       AmmountToPayLabel->Caption = formattedPrice;
+        AnsiString formattedPrice = FormatFloat("0.00", order->getPriceOfOrder());
+        AmmountToPayLabel->Caption = formattedPrice;
     }
 }
 //---------------------------------------------------------------------------
@@ -157,20 +152,10 @@ void __fastcall TForm1::StartButtonClick(TObject *Sender)
 
 void __fastcall TForm1::CollectButtonClick(TObject *Sender)
 {
-// RESET ORDER
+    // RESET ORDER
     order->collectOrder();
+    order->clearMenuRadioButtons();
 
     delete order;
     order = new Order(new BaseProducts(), new Sugar());
-
-
-    order->clearMenuRadioButtons();
-    /*for (int i = 0; i < MenuGroupBox->ControlCount; i++) {
-        TControl * control = MenuGroupBox->Controls[i];
-        //if (dynamic_cast<TRadioButton*>(control) ) {
-           TRadioButton * radio = dynamic_cast<TRadioButton*>(control);
-           radio->Checked = false;
-        //}
-    }
-    */
 }

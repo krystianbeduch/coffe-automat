@@ -9,9 +9,12 @@ class Sugar {
              Sugar();
              void setSugar(int sugar);
              int getSugar();
+             void setPriceOfOneSugar(int priceOfOneSugar);
+             double getPriceOfOneSugar();
+             double getPriceWithSugar(int sugar);
       private:
-              int sugar;
-
+             int sugar;
+             double priceOfOneSugar;
 };
 extern Sugar * sugar;
 
