@@ -37,8 +37,6 @@ __published:	// IDE-managed Components
 private:	// User declarations
 public:		// User declarations
     __fastcall TForm3(TComponent* Owner);
-    int convertToInt(double price);
-    double convertToDouble(int price);
 };
 //---------------------------------------------------------------------------
 extern PACKAGE TForm3 *Form3;

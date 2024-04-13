@@ -5,7 +5,7 @@
 
 #include "Unit2.h"
 #include "Unit1.h"
-#include "Unit4.h"
+#include "Order.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -17,39 +17,34 @@ __fastcall TForm2::TForm2(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
-//double newPrice;
-
-//double originalPriceOfOrder = order->getPriceOfOrder();
-
 double originalPriceOfOrder;
 
 void __fastcall TForm2::SugarSachetsEditChange(TObject *Sender)
 {
-     int sugar = 1;
-     double newPrice = 0;
-     sugar = StrToInt(SugarSachetsEdit->Text);
-     if (sugar == 0) {
-         newPrice = originalPriceOfOrder + order->setPriceWithSugar(0);
-     }
-     else {
-         newPrice = originalPriceOfOrder + order->setPriceWithSugar(sugar);
-     }
+    double newPrice = 0;
+    int sugar = StrToInt(SugarSachetsEdit->Text);
+    if (sugar == 0) {
+        order->sugar->setSugar(0);
+        newPrice = originalPriceOfOrder + order->sugar->getPriceWithSugar(0);
+    }
+    else {
+        order->sugar->setSugar(sugar);
+        newPrice = originalPriceOfOrder + order->sugar->getPriceWithSugar(sugar);
+    }
+    order->setPriceOfOrder(newPrice);
 
-     //double priceInDouble = order->convertToDouble(newPrice);
-     AnsiString formattedPrice = FormatFloat("0.00", newPrice); ////////
-     SugarEditorPriceLabel->Caption = formattedPrice;   ///////////////////////////
-//     SugarEditorPriceLabel->Caption = newPrice;   //////////////////////////
+    AnsiString formattedPrice = FormatFloat("0.00", newPrice);
+    SugarEditorPriceLabel->Caption = formattedPrice;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm2::FormShow(TObject *Sender)
 {
-     originalPriceOfOrder = order->getPrice(order->getOrderProduct());
-
-     //double priceInDouble = order->convertToDouble(originalPriceOfOrder); ////////////////
-     AnsiString formattedPrice = FormatFloat("0.00", originalPriceOfOrder); ////
+     originalPriceOfOrder = order->base->getPrice(order->getOrderProduct());
+     AnsiString formattedPrice = FormatFloat("0.00", originalPriceOfOrder);
      SugarEditorPriceLabel->Caption = formattedPrice;
      SugarSachetsEdit->ItemIndex = 1;
+     order->sugar->setSugar(1);
 }
 //---------------------------------------------------------------------------
 

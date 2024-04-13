@@ -10,8 +10,6 @@
 #include <ExtCtrls.hpp>
 #include <jpeg.hpp>
 #include <Buttons.hpp>
-
-//#include "Unit4.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -32,7 +30,7 @@ __published:	// IDE-managed Components
     TSpeedButton *EditSugarButton;
     TGroupBox *AmmountGroupBox;
     TLabel *AmmountToPayLabel;
-    TPanel *Panel2;
+    TPanel *PaymentPanel;
     TSpeedButton *PaymentButton;
     TPanel *PrepareOrderTimePanel;
     TPanel *Panel15;
@@ -40,6 +38,10 @@ __published:	// IDE-managed Components
     TPanel *Panel13;
     TPanel *Panel12;
     TPanel *Panel11;
+        TSpeedButton *TakeCupButton;
+    TPanel *StartPanel;
+    TSpeedButton *StartButton;
+    TSpeedButton *CollectButton;
         void __fastcall FormCreate(TObject *Sender);
         void __fastcall SpeedButton1Click(TObject *Sender);
         void __fastcall ImageAutomatMouseDown(TObject *Sender,
@@ -55,6 +57,8 @@ __published:	// IDE-managed Components
     void __fastcall RaspberryTeaButtonClick(TObject *Sender);
     void __fastcall PaymentButtonClick(TObject *Sender);
     void __fastcall FormDestroy(TObject *Sender);
+    void __fastcall StartButtonClick(TObject *Sender);
+    void __fastcall CollectButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
         __fastcall TForm1(TComponent* Owner);
