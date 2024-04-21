@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef Unit3H
-#define Unit3H
+#ifndef PaymentFormH
+#define PaymentFormH
 //---------------------------------------------------------------------------
 #include <Classes.hpp>
 #include <Controls.hpp>
@@ -10,7 +10,7 @@
 #include <Buttons.hpp>
 #include <ExtCtrls.hpp>
 //---------------------------------------------------------------------------
-class TForm3 : public TForm
+class TPayment : public TForm
 {
 __published:	// IDE-managed Components
     TPanel *Panel1;
@@ -36,9 +36,9 @@ __published:	// IDE-managed Components
     void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-    __fastcall TForm3(TComponent* Owner);
+    __fastcall TPayment(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm3 *Form3;
+extern PACKAGE TPayment *Payment;
 //---------------------------------------------------------------------------
 #endif

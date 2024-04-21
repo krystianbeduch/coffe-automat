@@ -1,23 +1,24 @@
+
 //---------------------------------------------------------------------------
 
 #include <vcl.h>
 #pragma hdrstop
 
-#include "Unit3.h"
+#include "PaymentForm.h"
 #include "Order.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TForm3 *Form3;
+TPayment *Payment;
 //---------------------------------------------------------------------------
-__fastcall TForm3::TForm3(TComponent* Owner)
+__fastcall TPayment::TPayment(TComponent* Owner)
     : TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
 double priceToPay = 0;
 
-void __fastcall TForm3::Pay10grButtonClick(TObject *Sender)
+void __fastcall TPayment::Pay10grButtonClick(TObject *Sender)
 {
      order->throwCoin(priceToPay, 1);
      if (order->isPayed(priceToPay))
@@ -25,35 +26,35 @@ void __fastcall TForm3::Pay10grButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm3::Pay20grButtonClick(TObject *Sender)
+void __fastcall TPayment::Pay20grButtonClick(TObject *Sender)
 {
      order->throwCoin(priceToPay, 2);
      if (order->isPayed(priceToPay))
         order->paymentDone();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm3::Pay50grButtonClick(TObject *Sender)
+void __fastcall TPayment::Pay50grButtonClick(TObject *Sender)
 {
      order->throwCoin(priceToPay, 5);
      if (order->isPayed(priceToPay))
         order->paymentDone();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm3::Pay1zlButtonClick(TObject *Sender)
+void __fastcall TPayment::Pay1zlButtonClick(TObject *Sender)
 {
      order->throwCoin(priceToPay, 10);
      if (order->isPayed(priceToPay))
         order->paymentDone();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm3::Pay2zlButtonClick(TObject *Sender)
+void __fastcall TPayment::Pay2zlButtonClick(TObject *Sender)
 {
      order->throwCoin(priceToPay, 20);
      if (order->isPayed(priceToPay))
         order->paymentDone();
 }
 //---------------------------------------------------------------------------
-void __fastcall TForm3::Pay5zlButtonClick(TObject *Sender)
+void __fastcall TPayment::Pay5zlButtonClick(TObject *Sender)
 {
      order->throwCoin(priceToPay, 50);
      if (order->isPayed(priceToPay))
@@ -62,7 +63,7 @@ void __fastcall TForm3::Pay5zlButtonClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
-void __fastcall TForm3::FormShow(TObject *Sender)
+void __fastcall TPayment::FormShow(TObject *Sender)
 {
      priceToPay = order->getPriceOfOrder();
      priceToPay *= 10;

@@ -1,10 +1,10 @@
-object Form2: TForm2
+object SugarEditor: TSugarEditor
   Left = 942
   Top = 416
   Width = 521
   Height = 269
   AutoSize = True
-  Caption = 'Form2'
+  Caption = 'Sugar Editor'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

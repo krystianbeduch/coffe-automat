@@ -1,10 +1,10 @@
-object Form3: TForm3
+object Payment: TPayment
   Left = 942
   Top = 418
   Width = 521
   Height = 289
   AutoSize = True
-  Caption = 'Form3'
+  Caption = 'Payment '
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

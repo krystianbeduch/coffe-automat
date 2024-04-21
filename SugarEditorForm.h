@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef Unit2H
-#define Unit2H
+#ifndef SugarEditorFormH
+#define SugarEditorFormH
 //---------------------------------------------------------------------------
 #include <Classes.hpp>
 #include <Controls.hpp>
@@ -10,7 +10,7 @@
 #include <ExtCtrls.hpp>
 #include <Buttons.hpp>
 //---------------------------------------------------------------------------
-class TForm2 : public TForm
+class TSugarEditor : public TForm
 {
 __published:	// IDE-managed Components
         TPanel *Panel1;
@@ -26,9 +26,9 @@ __published:	// IDE-managed Components
     void __fastcall FormShow(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TForm2(TComponent* Owner);
+        __fastcall TSugarEditor(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm2 *Form2;
+extern PACKAGE TSugarEditor *SugarEditor;
 //---------------------------------------------------------------------------
 #endif

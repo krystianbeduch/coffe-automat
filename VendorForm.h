@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef Unit1H
-#define Unit1H
+#ifndef VendorFormH
+#define VendorFormH
 //---------------------------------------------------------------------------
 #include <Classes.hpp>
 #include <Controls.hpp>
@@ -11,7 +11,7 @@
 #include <jpeg.hpp>
 #include <Buttons.hpp>
 //---------------------------------------------------------------------------
-class TForm1 : public TForm
+class TVendor : public TForm
 {
 __published:	// IDE-managed Components
         TImage *ImageAutomat;
@@ -61,10 +61,10 @@ __published:	// IDE-managed Components
     void __fastcall CollectButtonClick(TObject *Sender);
 private:	// User declarations
 public:		// User declarations
-        __fastcall TForm1(TComponent* Owner);
+        __fastcall TVendor(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TForm1 *Form1;
+extern PACKAGE TVendor *Vendor;
 //---------------------------------------------------------------------------
 #endif
  

@@ -1,10 +1,10 @@
-object Form1: TForm1
+object Vendor: TVendor
   Left = 1045
   Top = 313
   Width = 416
   Height = 709
   AutoSize = True
-  Caption = 'Form1'
+  Caption = 'Vendor'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

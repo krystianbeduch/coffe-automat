@@ -3,7 +3,7 @@
 #include <vcl.h>
 #pragma hdrstop
 
-#include "Unit1.h"
+#include "VendorForm.h"
 #include "Unit2.h"
 #include "Unit3.h"
 #include "baseProducts.h"
@@ -12,16 +12,16 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
-TForm1 *Form1;
+TVendor *Vendor;
 Order * order;
 //---------------------------------------------------------------------------
-__fastcall TForm1::TForm1(TComponent* Owner)
+__fastcall TVendor::TVendor(TComponent* Owner)
         : TForm(Owner)
 {
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::FormCreate(TObject *Sender)
+void __fastcall TVendor::FormCreate(TObject *Sender)
 {
     HRGN BckgRgn, GreenRgn;
     BckgRgn = CreateRoundRectRgn( 53, 30, 367, 625, 20, 20 );
@@ -31,13 +31,13 @@ void __fastcall TForm1::FormCreate(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::SpeedButton1Click(TObject *Sender)
+void __fastcall TVendor::SpeedButton1Click(TObject *Sender)
 {
      Close();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::ImageAutomatMouseDown(TObject *Sender,
+void __fastcall TVendor::ImageAutomatMouseDown(TObject *Sender,
       TMouseButton Button, TShiftState Shift, int X, int Y)
 {
   if (Button == mbLeft)
@@ -50,10 +50,10 @@ void __fastcall TForm1::ImageAutomatMouseDown(TObject *Sender,
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::EditSugarButtonClick(TObject *Sender)
+void __fastcall TVendor::EditSugarButtonClick(TObject *Sender)
 {
-    Form2->ShowModal();
-    if (Form2->ModalResult == mrOk) {
+    SugarEditorForm->ShowModal();
+    if (SugarEditorForm->ModalResult == mrOk) {
         EditSugarButton->Caption = order->sugar->getSugar();
 
         double newPrice = order->getPriceOfOrder();
@@ -65,7 +65,7 @@ void __fastcall TForm1::EditSugarButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::LargeBlackCoffeeButtonClick(TObject *Sender)
+void __fastcall TVendor::LargeBlackCoffeeButtonClick(TObject *Sender)
 {
      order->showPriceOnAmmountToPayLabel("LargeBlackCoffee");
      order->setOrderProduct("LargeBlackCoffee");
@@ -73,7 +73,7 @@ void __fastcall TForm1::LargeBlackCoffeeButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::SmallBlackCoffeeButtonClick(TObject *Sender)
+void __fastcall TVendor::SmallBlackCoffeeButtonClick(TObject *Sender)
 {
      order->showPriceOnAmmountToPayLabel("SmallBlackCoffee");
      order->setOrderProduct("SmallBlackCoffee");
@@ -81,7 +81,7 @@ void __fastcall TForm1::SmallBlackCoffeeButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::LargeWhiteCoffeeButtonClick(TObject *Sender)
+void __fastcall TVendor::LargeWhiteCoffeeButtonClick(TObject *Sender)
 {
      order->showPriceOnAmmountToPayLabel("LargeWhiteCoffee");
      order->setOrderProduct("LargeWhiteCoffee");
@@ -89,7 +89,7 @@ void __fastcall TForm1::LargeWhiteCoffeeButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::SmallWhiteCoffeeButtonClick(TObject *Sender)
+void __fastcall TVendor::SmallWhiteCoffeeButtonClick(TObject *Sender)
 {
      order->showPriceOnAmmountToPayLabel("SmallWhiteCoffee");
      order->setOrderProduct("SmallWhiteCoffee");
@@ -97,7 +97,7 @@ void __fastcall TForm1::SmallWhiteCoffeeButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::ChocolateWithMilkButtonClick(TObject *Sender)
+void __fastcall TVendor::ChocolateWithMilkButtonClick(TObject *Sender)
 {
      order->showPriceOnAmmountToPayLabel("ChocolateWithMilk");
      order->setOrderProduct("ChocolateWithMilk");
@@ -105,7 +105,7 @@ void __fastcall TForm1::ChocolateWithMilkButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::ChocolateButtonClick(TObject *Sender)
+void __fastcall TVendor::ChocolateButtonClick(TObject *Sender)
 {
      order->showPriceOnAmmountToPayLabel("Chocolate");
      order->setOrderProduct("Chocolate");
@@ -113,7 +113,7 @@ void __fastcall TForm1::ChocolateButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::BlackTeaButtonClick(TObject *Sender)
+void __fastcall TVendor::BlackTeaButtonClick(TObject *Sender)
 {
      order->showPriceOnAmmountToPayLabel("BlackTea");
      order->setOrderProduct("BlackTea");
@@ -121,7 +121,7 @@ void __fastcall TForm1::BlackTeaButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::RaspberryTeaButtonClick(TObject *Sender)
+void __fastcall TVendor::RaspberryTeaButtonClick(TObject *Sender)
 {
      order->showPriceOnAmmountToPayLabel("RaspberryTea");
      order->setOrderProduct("RaspberryTea");
@@ -129,7 +129,7 @@ void __fastcall TForm1::RaspberryTeaButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::PaymentButtonClick(TObject *Sender)
+void __fastcall TVendor::PaymentButtonClick(TObject *Sender)
 {
      Form3->ShowModal();
      if (Form3->ModalResult == mrOk) {
@@ -138,19 +138,19 @@ void __fastcall TForm1::PaymentButtonClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::FormDestroy(TObject *Sender)
+void __fastcall TVendor::FormDestroy(TObject *Sender)
 {
     delete order;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::StartButtonClick(TObject *Sender)
+void __fastcall TVendor::StartButtonClick(TObject *Sender)
 {
     order->prepareOrder();
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::CollectButtonClick(TObject *Sender)
+void __fastcall TVendor::CollectButtonClick(TObject *Sender)
 {
     // RESET ORDER
     order->collectOrder();
