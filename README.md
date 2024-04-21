@@ -3,7 +3,7 @@ This project was implemented during IT studies as part of desktop application pr
 To start with, we used a slightly older but simple and easy-to-use environment - __C++ Builder__.
 
 ## General Info
-The application is an implementation of a vending machine for coffee (and other beverages). Choose your drink, set the amount of sugar, insert your coins, collect and enjoy your drink :coffee:
+The application is an implementation of a vending machine for coffee (and other beverages). Choose your drink, set the amount of sugar, insert your coins, collect and enjoy your drink! :coffee:
 
 ## Features
 - Program is divided into 3 windows: the main window (vendor), the sugar content edition window, and the payment window.
@@ -25,17 +25,16 @@ The application is an implementation of a vending machine for coffee (and other 
 The project was implemented using :
 * C++ Builder 6.0  
   
-And the library used in it
+And the library used in it:
 * VCL
 
-## Setup
+## Setup  
 
-
-##Usage
+## Usage
 After starting, most of the buttons are locked. First select the appropriate beverage by selecting one of the radio buttons. The `sugar` and `payment` buttons are then unlocked. 
 Clicking on them will take us to an appropriately dedicated window:
 - In `SugarEditorForm` we can change the sugar content via select list or enter it manually, we can see the current price of the order there.
-- In `PaymentForm`, we pay for the order by inserting appropriate coins and monitoring the amount remaining to be paid. After paying in full, we receive the appropriate change and confirm the payment  
+- In `PaymentForm`, we pay for the order by inserting appropriate coins and monitoring the amount remaining to be paid. After paying in full, we receive the appropriate change and confirm the payment.  
 When the "screen" displaying the amount already shows __0__, the `start` button is unlocked, clicking which will complete our order - the ability to click or move the window is blocked at this point; we see the order progress through appropriate bars and the appropriate color of the "light".
 After a short while, we can collect our order, which is indicated by the light and the available `collect` button.
 After clicking on it, we can place another order.
