@@ -33,8 +33,8 @@ We can download the Borland C++ Builder 6 Personal package, which is available f
 ## Usage
 After starting, most of the buttons are locked. First select the appropriate beverage by selecting one of the radio buttons. The `sugar` and `payment` buttons are then unlocked. 
 Clicking on them will take us to an appropriately dedicated window:
-- In `SugarEditorForm` we can change the sugar content via select list or enter it manually, we can see the current price of the order there.
-- In `PaymentForm`, we pay for the order by inserting appropriate coins and monitoring the amount remaining to be paid. After paying in full, we receive the appropriate change and confirm the payment.
+- In `SugarEditor` we can change the sugar content via select list or enter it manually, we can see the current price of the order there.
+- In `Payment`, we pay for the order by inserting appropriate coins and monitoring the amount remaining to be paid. After paying in full, we receive the appropriate change and confirm the payment.
 
 When the "screen" displaying the amount already shows __0__, the `start` button is unlocked, clicking which will complete our order - the ability to click or move the window is blocked at this point; we see the order progress through appropriate bars and the appropriate color of the "light".
 
