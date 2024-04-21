@@ -51,7 +51,6 @@ void Order::throwCoin(double &priceToPay, int coin){
     Form3->ToPayLabel->Caption = formattedPrice;
 }
 
-
 boolean Order::isPayed(double priceToPay){
     if (priceToPay <= 0)
        return true;
