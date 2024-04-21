@@ -4,13 +4,13 @@
   <MACROS>
     <VERSION value="BCB.06.00"/>
     <PROJECT value="Automat.exe"/>
-    <OBJFILES value="Automat.obj Unit1.obj Unit2.obj Unit3.obj baseProducts.obj Order.obj 
-      Sugar.obj"/>
+    <OBJFILES value="Automat.obj VendorForm.obj SugarEditorForm.obj PaymentForm.obj 
+      baseProducts.obj Order.obj Sugar.obj"/>
     <RESFILES value="Automat.res"/>
     <DEFFILE value=""/>
-    <RESDEPEN value="$(RESFILES) Unit1.dfm Unit2.dfm Unit3.dfm"/>
+    <RESDEPEN value="$(RESFILES) VendorForm.dfm SugarEditorForm.dfm PaymentForm.dfm"/>
     <LIBFILES value=""/>
-    <LIBRARIES value=""/>
+    <LIBRARIES value="rtl.lib vcl.lib"/>
     <SPARELIBS value="vcl.lib rtl.lib"/>
     <PACKAGES value="vcl.bpi rtl.bpi vclx.bpi dclocx.bpi bcbsmp.bpi"/>
     <PATHCPP value=".;"/>
@@ -21,7 +21,7 @@
     <RELEASELIBPATH value="$(BCB)\lib\release"/>
     <LINKER value="ilink32"/>
     <USERDEFINES value="_DEBUG"/>
-    <SYSDEFINES value="_RTLDLL;NO_STRICT;USEPACKAGES"/>
+    <SYSDEFINES value="NO_STRICT"/>
     <MAINSOURCE value="Automat.cpp"/>
     <INCLUDEPATH value="C:\CBuilder6\Projects;&quot;C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\C++ Builder\AutomatDoKawy&quot;;$(BCB)\include;$(BCB)\include\vcl"/>
     <LIBPATH value="C:\CBuilder6\Projects;&quot;C:\Users\Czarek\Desktop\US\4 semestr\Programowanie w srodowiskach zintegrowanych\Laboratorium\C++ Builder\AutomatDoKawy&quot;;$(BCB)\lib\obj;$(BCB)\lib"/>
@@ -38,17 +38,17 @@
     <OTHERFILES value=""/>
   </OPTIONS>
   <LINKER>
-    <ALLOBJ value="c0w32.obj $(PACKAGES) Memmgr.Lib sysinit.obj $(OBJFILES)"/>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
     <ALLRES value="$(RESFILES)"/>
-    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mti.lib"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
     <OTHERFILES value=""/>
   </LINKER>
   <FILELIST>
       <FILE FILENAME="Automat.res" FORMNAME="" UNITNAME="Automat.res" CONTAINERID="ResTool" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Automat.cpp" FORMNAME="" UNITNAME="Automat" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="Unit1.cpp" FORMNAME="Form1" UNITNAME="Unit1" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="Unit2.cpp" FORMNAME="Form2" UNITNAME="Unit2" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
-      <FILE FILENAME="Unit3.cpp" FORMNAME="Form3" UNITNAME="Unit3" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="VendorForm.cpp" FORMNAME="Vendor" UNITNAME="VendorForm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="SugarEditorForm.cpp" FORMNAME="SugarEditor" UNITNAME="SugarEditorForm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
+      <FILE FILENAME="PaymentForm.cpp" FORMNAME="Payment" UNITNAME="PaymentForm" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="baseProducts.cpp" FORMNAME="" UNITNAME="baseProducts" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Order.cpp" FORMNAME="" UNITNAME="Order" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>
       <FILE FILENAME="Sugar.cpp" FORMNAME="" UNITNAME="Sugar" CONTAINERID="CCompiler" DESIGNCLASS="" LOCALCOMMAND=""/>

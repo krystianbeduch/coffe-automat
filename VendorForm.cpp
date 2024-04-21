@@ -4,11 +4,11 @@
 #pragma hdrstop
 
 #include "VendorForm.h"
-#include "Unit2.h"
-#include "Unit3.h"
 #include "baseProducts.h"
 #include "Order.h"
 #include "Sugar.h"
+#include "PaymentForm.h"
+#include "SugarEditorForm.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -52,8 +52,8 @@ void __fastcall TVendor::ImageAutomatMouseDown(TObject *Sender,
 
 void __fastcall TVendor::EditSugarButtonClick(TObject *Sender)
 {
-    SugarEditorForm->ShowModal();
-    if (SugarEditorForm->ModalResult == mrOk) {
+    SugarEditor->ShowModal();
+    if (SugarEditor->ModalResult == mrOk) {
         EditSugarButton->Caption = order->sugar->getSugar();
 
         double newPrice = order->getPriceOfOrder();
@@ -131,8 +131,8 @@ void __fastcall TVendor::RaspberryTeaButtonClick(TObject *Sender)
 
 void __fastcall TVendor::PaymentButtonClick(TObject *Sender)
 {
-     Form3->ShowModal();
-     if (Form3->ModalResult == mrOk) {
+     Payment->ShowModal();
+     if (Payment->ModalResult == mrOk) {
          order->orderReadyToStart();
      }
 }

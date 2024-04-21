@@ -71,22 +71,22 @@ void __fastcall TPayment::FormShow(TObject *Sender)
      ToPayLabel->Caption = formattedPrice;
 
      TSpeedButton * buttons[] = {
-         Form3->Pay10grButton,
-         Form3->Pay20grButton,
-         Form3->Pay50grButton,
-         Form3->Pay1zlButton,
-         Form3->Pay2zlButton,
-         Form3->Pay5zlButton
+         Payment->Pay10grButton,
+         Payment->Pay20grButton,
+         Payment->Pay50grButton,
+         Payment->Pay1zlButton,
+         Payment->Pay2zlButton,
+         Payment->Pay5zlButton
      };
      for (int i = 0; i < sizeof(buttons) / sizeof(buttons[0]); i++) {
          buttons[i]->Enabled = true;
      }
 
-     Form3->Label4->Visible = false;
-     Form3->RestLabel->Visible = false;
-     Form3->PaymentExitButton->ModalResult = mrCancel;
-     Form3->PaymentExitButton->Kind = bkCancel;
-     Form3->PaymentExitButton->Caption = "Przerwij p³atnoœæ";
+     Payment->Label4->Visible = false;
+     Payment->RestLabel->Visible = false;
+     Payment->PaymentExitButton->ModalResult = mrCancel;
+     Payment->PaymentExitButton->Kind = bkCancel;
+     Payment->PaymentExitButton->Caption = "Przerwij p³atnoœæ";
 }
 //---------------------------------------------------------------------------
 

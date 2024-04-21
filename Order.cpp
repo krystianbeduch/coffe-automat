@@ -1,12 +1,10 @@
 //---------------------------------------------------------------------------
 #include "Order.h"
-#include "Unit1.h"
-#include "Unit2.h"
-#include "Unit3.h"
 #include "baseProducts.h"
 #include "Sugar.h"
-
-
+#include "PaymentForm.h"
+#include "SugarEditorForm.h"
+#include "VendorForm.h"
 //---------------------------------------------------------------------------
 Order::Order(BaseProducts * base, Sugar * sugar){
     Order::base = base;
@@ -15,7 +13,7 @@ Order::Order(BaseProducts * base, Sugar * sugar){
 
 void Order::showPriceOnAmmountToPayLabel(AnsiString product){
     int sugar = order->sugar->getSugar();
-    Form1->EditSugarButton->Enabled = true;
+    Vendor->EditSugarButton->Enabled = true;
     double price = base->getPrice(product);
     if (sugar == 0) {
        price += order->sugar->getPriceWithSugar(0);
@@ -25,8 +23,8 @@ void Order::showPriceOnAmmountToPayLabel(AnsiString product){
     }
 
     AnsiString formattedPrice = FormatFloat("0.00", price);
-    Form1->AmmountToPayLabel->Caption = formattedPrice;
-    Form1->PaymentPanel->Visible = true;
+    Vendor->AmmountToPayLabel->Caption = formattedPrice;
+    Vendor->PaymentPanel->Visible = true;
 }
 
 double Order::getPriceOfOrder(){
@@ -48,7 +46,7 @@ AnsiString Order::getOrderProduct(){
 void Order::throwCoin(double &priceToPay, int coin){
     priceToPay -= coin;
     AnsiString formattedPrice = FormatFloat("0.00", priceToPay / 10);
-    Form3->ToPayLabel->Caption = formattedPrice;
+    Payment->ToPayLabel->Caption = formattedPrice;
 }
 
 boolean Order::isPayed(double priceToPay){
@@ -60,28 +58,28 @@ boolean Order::isPayed(double priceToPay){
 
 void Order::paymentDone(){
      TSpeedButton * buttons[] = {
-         Form3->Pay10grButton,
-         Form3->Pay20grButton,
-         Form3->Pay50grButton,
-         Form3->Pay1zlButton,
-         Form3->Pay2zlButton,
-         Form3->Pay5zlButton
+         Payment->Pay10grButton,
+         Payment->Pay20grButton,
+         Payment->Pay50grButton,
+         Payment->Pay1zlButton,
+         Payment->Pay2zlButton,
+         Payment->Pay5zlButton
      };
 
      for (int i = 0; i < sizeof(buttons) / sizeof(buttons[0]); i++) {
          buttons[i]->Enabled = false;
      }
 
-     Form3->Label4->Visible = true;
-     Form3->RestLabel->Visible = true;
+     Payment->Label4->Visible = true;
+     Payment->RestLabel->Visible = true;
 
-     double change = StrToFloat(Form3->ToPayLabel->Caption);
-     Form3->RestLabel->Caption = spentChange(-change);
-     Form3->ToPayLabel->Caption = "0";
+     double change = StrToFloat(Payment->ToPayLabel->Caption);
+     Payment->RestLabel->Caption = spentChange(-change);
+     Payment->ToPayLabel->Caption = "0";
 
-     Form3->PaymentExitButton->ModalResult = mrOk;
-     Form3->PaymentExitButton->Caption = "Zakoñcz p³atnoœæ";
-     Form3->PaymentExitButton->Kind = bkOK;
+     Payment->PaymentExitButton->ModalResult = mrOk;
+     Payment->PaymentExitButton->Caption = "Zakoñcz p³atnoœæ";
+     Payment->PaymentExitButton->Kind = bkOK;
 }
 
 AnsiString Order::spentChange(double change){
@@ -117,30 +115,30 @@ AnsiString Order::spentChange(double change){
 }
 
 void Order::orderReadyToStart(){
-     Form1->EditSugarButton->Enabled = false;
-     Form1->PaymentButton->Enabled = false;
-     Form1->MenuGroupBox->Enabled = false;
+     Vendor->EditSugarButton->Enabled = false;
+     Vendor->PaymentButton->Enabled = false;
+     Vendor->MenuGroupBox->Enabled = false;
 
-     Form1->StatusOrder->Color = clYellow;
+     Vendor->StatusOrder->Color = clYellow;
      setPriceOfOrder(0);
      AnsiString formattedPrice = FormatFloat("0.00", getPriceOfOrder());
-     Form1->AmmountToPayLabel->Caption = formattedPrice;
+     Vendor->AmmountToPayLabel->Caption = formattedPrice;
 
-     Form1->StartPanel->Visible = true;
-     Form1->StartButton->Visible = true;
+     Vendor->StartPanel->Visible = true;
+     Vendor->StartButton->Visible = true;
 }
 
 void Order::prepareOrder(){
-     Form1->StartButton->Enabled = false;
-     Form1->StartButton->Visible = false;
+     Vendor->StartButton->Enabled = false;
+     Vendor->StartButton->Visible = false;
 
      TPanel *panels[] = {
-         Form1->PrepareOrderTimePanel,
-         Form1->Panel11,
-         Form1->Panel12,
-         Form1->Panel13,
-         Form1->Panel14,
-         Form1->Panel15
+         Vendor->PrepareOrderTimePanel,
+         Vendor->Panel11,
+         Vendor->Panel12,
+         Vendor->Panel13,
+         Vendor->Panel14,
+         Vendor->Panel15
      };
 
      for (int i = 0; i < sizeof(panels) / sizeof(panels[0]); i++) {
@@ -152,27 +150,27 @@ void Order::prepareOrder(){
         panels[i]->Visible = false;
      }
 
-     Form1->StatusOrder->Color = clLime;
-     Form1->StartButton->Enabled = true;
-     Form1->CollectButton->Visible = true;
+     Vendor->StatusOrder->Color = clLime;
+     Vendor->StartButton->Enabled = true;
+     Vendor->CollectButton->Visible = true;
 }
 
 void Order::collectOrder(){
-     Form1->EditSugarButton->Enabled = false;
-     Form1->PaymentButton->Enabled = true;
-     Form1->MenuGroupBox->Enabled = true;
-     Form1->StatusOrder->Color = clRed;
-     Form1->CollectButton->Visible = false;
-     Form1->StartPanel->Visible = false;
-     Form1->PaymentPanel->Visible = false;
+     Vendor->EditSugarButton->Enabled = false;
+     Vendor->PaymentButton->Enabled = true;
+     Vendor->MenuGroupBox->Enabled = true;
+     Vendor->StatusOrder->Color = clRed;
+     Vendor->CollectButton->Visible = false;
+     Vendor->StartPanel->Visible = false;
+     Vendor->PaymentPanel->Visible = false;
 
      sugar->setSugar(1);
-     Form1->EditSugarButton->Caption = sugar->getSugar();
+     Vendor->EditSugarButton->Caption = sugar->getSugar();
 }
 
 void Order::clearMenuRadioButtons(){
-    for (int i = 0; i < Form1->MenuGroupBox->ControlCount; i++) {
-        TControl * control = Form1->MenuGroupBox->Controls[i];
+    for (int i = 0; i < Vendor->MenuGroupBox->ControlCount; i++) {
+        TControl * control = Vendor->MenuGroupBox->Controls[i];
         TRadioButton * radio = dynamic_cast<TRadioButton*>(control);
         radio->Checked = false;
     }
