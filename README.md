@@ -1,6 +1,6 @@
 # Coffe Automat
 This project was implemented during IT studies as part of desktop application programming classes. The project was a summary of the knowledge gained in RAD programming. 
-To start with, we used a slightly older but simple and easy-to-use environment - [C++ Builder](https://www.embarcadero.com/products/cbuilder).
+To start with, we used a slightly older version, but a simple and easy-to-use environment - [C++ Builder](https://www.embarcadero.com/products/cbuilder).
 
 ## General Info
 The application is an implementation of a vending machine for coffee (and other beverages). Choose your drink, set the amount of sugar, insert your coins, collect and enjoy your drink! :coffee:
