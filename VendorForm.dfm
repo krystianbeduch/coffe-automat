@@ -1,6 +1,6 @@
 object Vendor: TVendor
-  Left = 1045
-  Top = 313
+  Left = 785
+  Top = 87
   Width = 416
   Height = 709
   AutoSize = True
@@ -1241,41 +1241,41 @@ object Vendor: TVendor
     Top = 40
     Width = 249
     Height = 121
-    Caption = 'WYBIERZ NAP'#211'J'
+    Caption = 'SELECT DRINK'
     TabOrder = 1
     object LargeBlackCoffeeButton: TRadioButton
       Left = 8
       Top = 16
-      Width = 113
+      Width = 115
       Height = 25
-      Caption = 'Kawa czarna du'#380'a'
+      Caption = 'Large black coffee'
       TabOrder = 0
       OnClick = LargeBlackCoffeeButtonClick
     end
     object SmallBlackCoffeeButton: TRadioButton
       Left = 128
       Top = 16
-      Width = 113
+      Width = 115
       Height = 25
-      Caption = 'Kawa czarna ma'#322'a'
+      Caption = 'Small black coffee'
       TabOrder = 1
       OnClick = SmallBlackCoffeeButtonClick
     end
     object LargeWhiteCoffeeButton: TRadioButton
       Left = 8
       Top = 40
-      Width = 105
+      Width = 115
       Height = 25
-      Caption = 'Kawa bia'#322'a du'#380'a'
+      Caption = 'Large white coffee'
       TabOrder = 2
       OnClick = LargeWhiteCoffeeButtonClick
     end
     object SmallWhiteCoffeeButton: TRadioButton
       Left = 128
       Top = 40
-      Width = 113
+      Width = 115
       Height = 25
-      Caption = 'Kawa bia'#322'a ma'#322'a'
+      Caption = 'Small white coffee'
       TabOrder = 3
       OnClick = SmallWhiteCoffeeButtonClick
     end
@@ -1284,25 +1284,25 @@ object Vendor: TVendor
       Top = 64
       Width = 105
       Height = 25
-      Caption = 'Czekolada'
+      Caption = 'Chocolate'
       TabOrder = 4
       OnClick = ChocolateButtonClick
     end
     object ChocolateWithMilkButton: TRadioButton
       Left = 8
       Top = 64
-      Width = 121
+      Width = 115
       Height = 25
-      Caption = 'Czekolada z mlekiem'
+      Caption = 'Chocolate with milk'
       TabOrder = 5
       OnClick = ChocolateWithMilkButtonClick
     end
     object BlackTeaButton: TRadioButton
       Left = 8
       Top = 88
-      Width = 105
+      Width = 115
       Height = 25
-      Caption = 'Herbata czarna'
+      Caption = 'Black tea'
       TabOrder = 6
       OnClick = BlackTeaButtonClick
     end
@@ -1311,7 +1311,7 @@ object Vendor: TVendor
       Top = 88
       Width = 105
       Height = 25
-      Caption = 'Herbata malinowa'
+      Caption = 'Raspberry tea'
       TabOrder = 7
       OnClick = RaspberryTeaButtonClick
     end
@@ -1321,7 +1321,7 @@ object Vendor: TVendor
     Top = 160
     Width = 81
     Height = 41
-    Caption = 'CUKIER'
+    Caption = 'SUGAR'
     TabOrder = 2
     object EditSugarButton: TSpeedButton
       Left = 0
@@ -1339,7 +1339,7 @@ object Vendor: TVendor
     Top = 200
     Width = 81
     Height = 49
-    Caption = 'DO ZAP'#321'ATY'
+    Caption = 'TO PAY'
     TabOrder = 3
     object AmmountToPayLabel: TLabel
       Left = 8
@@ -1368,7 +1368,7 @@ object Vendor: TVendor
       Top = 0
       Width = 81
       Height = 33
-      Caption = 'P'#321'ATNO'#346#262
+      Caption = 'PAYMENT'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
@@ -1459,7 +1459,7 @@ object Vendor: TVendor
       Top = 0
       Width = 81
       Height = 33
-      Caption = 'ODBIERZ'
+      Caption = 'COLLECT'
       Flat = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText

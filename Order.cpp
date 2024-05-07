@@ -78,8 +78,9 @@ void Order::paymentDone(){
      Payment->ToPayLabel->Caption = "0";
 
      Payment->PaymentExitButton->ModalResult = mrOk;
-     Payment->PaymentExitButton->Caption = "Zakoñcz p³atnoœæ";
      Payment->PaymentExitButton->Kind = bkOK;
+     Payment->PaymentExitButton->Caption = "Complete payment";
+
 }
 
 AnsiString Order::spentChange(double change){
@@ -107,7 +108,7 @@ AnsiString Order::spentChange(double change){
             change -= 20;
 		}
         else {
-             nominals += "Zap³acono równo";
+             nominals += "Paid equally";
         }
      }
      while(!(change < 1));

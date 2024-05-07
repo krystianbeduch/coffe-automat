@@ -28,7 +28,7 @@ object SugarEditor: TSugarEditor
       Height = 20
       Alignment = taCenter
       AutoSize = False
-      Caption = 'Do kazdej pozycji dodajemy domyslnie 1 saszetke cukru'
+      Caption = 'By default we add 1 sachet of sugar to each drink'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -43,7 +43,7 @@ object SugarEditor: TSugarEditor
       Height = 20
       Alignment = taCenter
       AutoSize = False
-      Caption = 'Dodatkowa saszetka p'#322'atna dodatkowo 20 groszy'
+      Caption = 'An additional sachet costs an addtional  0.2 PLN'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -54,10 +54,10 @@ object SugarEditor: TSugarEditor
     object Label3: TLabel
       Left = 48
       Top = 80
-      Width = 129
+      Width = 121
       Height = 20
       Alignment = taCenter
-      Caption = 'Saszetek cukru'
+      Caption = 'Sugar sachets'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -86,7 +86,7 @@ object SugarEditor: TSugarEditor
       Height = 20
       Alignment = taCenter
       AutoSize = False
-      Caption = 'Aktualna cena zamowienia'
+      Caption = 'Current order price'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clRed
       Font.Height = -16
@@ -123,7 +123,6 @@ object SugarEditor: TSugarEditor
       Top = 185
       Width = 89
       Height = 25
-      Caption = 'Anuluj'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
@@ -138,7 +137,7 @@ object SugarEditor: TSugarEditor
       Top = 185
       Width = 89
       Height = 25
-      Caption = 'Zatwierdz'
+      Caption = 'Confirm'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13

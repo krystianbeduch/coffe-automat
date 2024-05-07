@@ -28,7 +28,7 @@ object Payment: TPayment
       Height = 20
       Alignment = taCenter
       AutoSize = False
-      Caption = 'Do zap'#322'aty pozosta'#322'o:'
+      Caption = 'Left to pay:'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -43,7 +43,7 @@ object Payment: TPayment
       Height = 20
       Alignment = taCenter
       AutoSize = False
-      Caption = 'P'#321'ATNO'#346#262
+      Caption = 'PAYMENT'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -72,7 +72,7 @@ object Payment: TPayment
       Height = 20
       Alignment = taCenter
       AutoSize = False
-      Caption = 'Wrzuc monete'
+      Caption = 'Insert a coin'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -177,7 +177,7 @@ object Payment: TPayment
       Height = 20
       Alignment = taCenter
       AutoSize = False
-      Caption = 'Twoja reszta'
+      Caption = 'Your change'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
@@ -204,10 +204,10 @@ object Payment: TPayment
     object PaymentExitButton: TBitBtn
       Left = 280
       Top = 112
-      Width = 145
+      Width = 150
       Height = 25
       Cancel = True
-      Caption = 'Przerwij platnosc'
+      Caption = 'Abort payment'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13

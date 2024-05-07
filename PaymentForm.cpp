@@ -86,7 +86,7 @@ void __fastcall TPayment::FormShow(TObject *Sender)
      Payment->RestLabel->Visible = false;
      Payment->PaymentExitButton->ModalResult = mrCancel;
      Payment->PaymentExitButton->Kind = bkCancel;
-     Payment->PaymentExitButton->Caption = "Przerwij p³atnoœæ";
+     Payment->PaymentExitButton->Caption = "Abort payment";
 }
 //---------------------------------------------------------------------------
 
